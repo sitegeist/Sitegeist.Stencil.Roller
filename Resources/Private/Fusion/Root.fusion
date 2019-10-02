@@ -14,7 +14,7 @@ stencil.roller.json = Neos.Fusion:Http.Message {
             items = ${q(documentNode).children('[instanceof Neos.Neos:Document]').get()}
             itemRenderer = Neos.Fusion:DataStructure {
                 identifier = ${item.identifier}
-                data = Neos.Neos:NodeUri {
+                uri = Neos.Neos:NodeUri {
                     node = ${item}
                     format = "stencil.roller.json"
                 }
