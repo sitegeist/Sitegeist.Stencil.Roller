@@ -3,6 +3,25 @@
 
 **This is WIP, everything in here may change or turn out to be a bad idea at all.**
 
+This packahe will expose the content of each document if the url is called using `.stencil.roller.json` suffix instead of `.html`;
+
+The returned json:
+```json
+{
+   document: {
+     identifier 
+     nodeType
+     properties: {
+       // all properties of the node
+     }  
+     content: {
+       // all children of type Content and ContentCollection recursively 
+     } 
+   }
+   children: [{identifier, uri}, ..] // all children of type Document
+}
+```
+
 ### Authors & Sponsors
 
 * Wilhelm Behncke - behncke@sitegeist.de
