@@ -1,0 +1,10 @@
+Neos:
+  Flow:
+    mvc:
+      routes:
+        'Sitegeist.Stencil.Roller':
+          position: 'before Neos.Neos'
+  Neos:
+    fusion:
+      autoInclude:
+        Sitegeist.Stencil.Roller: true

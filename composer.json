@@ -1,0 +1,19 @@
+{
+    "description": "Json rendering for headless Neos",
+    "type": "neos-package",
+    "name": "sitegeist/stencil-roller",
+    "require": {
+        "neos/fusion": "^4.3 || dev-master"
+    },
+    "license": "GPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Sitegeist\\Stencil\\Roller\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "Sitegeist.Stencil.Roller"
+        }
+    }
+}

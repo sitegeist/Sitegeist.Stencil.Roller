@@ -1,0 +1,39 @@
+stencil.roller.json = Neos.Fusion:Http.Message {
+    httpResponseHead {
+        headers {
+            Content-Type = "application/json"
+        }
+    }
+
+    data = Neos.Fusion:DataStructure {
+        @process.stringify = ${Json.stringify(value)}
+        document =  Sitegeist.StencilRoller:ContentRecursive {
+            node = ${documentNode}
+        }
+        children = Neos.Fusion:Map {
+            items = ${q(documentNode).children('[instanceof Neos.Neos:Document]').get()}
+            itemRenderer = Neos.Fusion:DataStructure {
+                identifier = ${item.identifier}
+                data = Neos.Neos:NodeUri {
+                    node = ${item}
+                    format = "stencil.roller.json"
+                }
+            }
+        }
+    }
+}
+
+prototype(Sitegeist.StencilRoller:ContentRecursive) < prototype(Neos.Fusion:Component) {
+    node = null
+    renderer = Neos.Fusion:DataStructure {
+        nodeType = ${props.node.nodetype.name}
+        identifier = ${props.node.identifier}
+        properties = ${props.node.properties}
+        content = Neos.Fusion:Map {
+            items = ${q(props.node).children('[instanceof Neos.Neos:Content],[instanceof Neos.Neos:ContentCollection]').get()}
+            itemRenderer = Sitegeist.StencilRoller:ContentRecursive {
+                node = ${item}
+            }
+        }
+    }
+}
