@@ -3,7 +3,7 @@
 
 **This is WIP, everything in here may change or turn out to be a bad idea at all.**
 
-This packahe will expose the content of each document if the url is called using `.stencil.roller.json` suffix instead of `.html`;
+This package will expose the content of each document as json. You can access the document data by using `.stencil.roller.json` suffix instead of `.html`.
 
 The returned json:
 ```
