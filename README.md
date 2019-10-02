@@ -6,7 +6,7 @@
 This packahe will expose the content of each document if the url is called using `.stencil.roller.json` suffix instead of `.html`;
 
 The returned json:
-```json
+```
 {
    document: {
      identifier 
